@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3F51B5">
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationText"
-        android:text=""
-        android:textColor="#FFFFFF"
-        android:textSize="17sp"
-        android:textAlignment="center"
-        android:layout_centerInParent="true"
-        android:layout_above="@+id/getLocationBtn"
-        android:layout_marginBottom="10dp"
-        android:padding="10dp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Current Location"
-        android:layout_centerInParent="true"
-        android:background="#FFFFFF"
-        android:padding="10dp"
-        android:id="@+id/getLocationBtn"/>
-
-
-</RelativeLayout>
+    android:orientation="horizontal">
+<EditText
+    android:id="@+id/edit_message"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/edit_message"/>
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/button_send"
+    android:onClick="sendMessage"/>
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </LinearLayout>
