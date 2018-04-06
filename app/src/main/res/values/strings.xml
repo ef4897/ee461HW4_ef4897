@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">My First App</string>
-    <string name="edit_message">Enter a message</string>
+    <string name="edit_message_adr">Address</string>
+    <string name="edit_msg_state">2-Letter State Code</string>
+    <string name="edit_msg_city">City</string>
     <string name="button_send">Send</string>
-    <string name="title_activity_display_message">My Message</string>
 </resources>
