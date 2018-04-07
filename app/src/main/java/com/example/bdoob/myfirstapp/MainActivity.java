@@ -69,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
         mRequestQueue.add(jsonObjectRequest);
 
 
-        if (!message6.matches("")) {
+        if ((message6.length()<1) && (message5.length()<1) && (message4.length()<1)) {
+            both = false;
+        }
+        else{
             both = true;
         }
 
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 // Access the RequestQueue through your singleton class.
             mRequestQueue.add(jsonObjectRequest1);
-    }
+        }
 
 
     }
@@ -112,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("lat", lat);
         intent.putExtra("lon", lon);
         intent.putExtra("zip", zip);
-            intent.putExtra("lat1", lat1);
-            intent.putExtra("lon1", lon1);
-            intent.putExtra("zip1", zip1);
-            intent.putExtra("distance", getDistanceFromLatLonInKm(lat, lon, lat1, lon1));
+        intent.putExtra("lat1", lat1);
+        intent.putExtra("lon1", lon1);
+        intent.putExtra("zip1", zip1);
+        intent.putExtra("distance", getDistanceFromLatLonInKm(lat, lon, lat1, lon1));
         startActivity(intent);
     }
 

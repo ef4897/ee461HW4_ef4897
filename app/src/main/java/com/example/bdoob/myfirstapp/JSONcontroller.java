@@ -26,7 +26,7 @@ public class JSONcontroller extends JsonObjectRequest{
                     activity.lon = response.getJSONArray("results").getJSONObject(0).getJSONObject("geometry").getJSONObject("location").getDouble("lng");
                     String resp = response.toString();
                     if (!activity.both){
-                       activity.sendResponse(activity.lat, activity.lon, activity.zipCode);
+                        activity.sendResponse(activity.lat, activity.lon, activity.zipCode);
                     }
 
                 }

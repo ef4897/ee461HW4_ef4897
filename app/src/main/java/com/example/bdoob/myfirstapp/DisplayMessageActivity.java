@@ -11,6 +11,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class DisplayMessageActivity extends AppCompatActivity implements OnMapReadyCallback {
     private String zip;
@@ -46,6 +47,7 @@ public class DisplayMessageActivity extends AppCompatActivity implements OnMapRe
         LatLng city1 = new LatLng(lat, lon);
         googleMap.addMarker(new MarkerOptions().position(city1)
                 .title("First City"));
+
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(city1, 6));
         TextView textView = (TextView) findViewById(R.id.text_view_zip1);
         textView.setTextSize(20);
@@ -55,6 +57,7 @@ public class DisplayMessageActivity extends AppCompatActivity implements OnMapRe
             googleMap.addMarker(new MarkerOptions().position(city2)
                     .title("Second City"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(city2, 6));
+            googleMap.addPolyline(new PolylineOptions().add(city1, city2).width(5));
             TextView textView2 = (TextView) findViewById(R.id.text_view_zip2);
             textView2.setTextSize(20);
             textView2.setText("Zip Code2: " + zip1);
